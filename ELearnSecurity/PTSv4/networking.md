@@ -1,4 +1,3 @@
-Networking - PTSv4
 
 # Networking
 ### Terminologies and Theory
