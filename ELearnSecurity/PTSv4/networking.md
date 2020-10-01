@@ -13,7 +13,7 @@ They transmit through physical media like wires in LAN or the air in WiFi.
 
 
 
-![Structure of a packet](/assets/packet-structure.png)
+![Structure of a packet](/ELearnSecurity/PTSv4/assets/packet-structure.png)
 
 
 
