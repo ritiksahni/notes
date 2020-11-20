@@ -1,5 +1,7 @@
-# Course Notes
-Notes from my enrolled courses.
+# Preparation Notes
+
+Notes for preparation and studies.
 
 
-<a href="ELearnSecurity/PTSv4">ELearnSecurity</a>
+<a href="ELearnSecurity/PTSv4">ELearnSecurity</a><br>
+<a href="Offensive Security/">Offensive Security</a>
