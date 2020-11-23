@@ -8,7 +8,7 @@ http://www.fuzzysecurity.com/tutorials/expDev/2.html
 
 # Exploit Development
 
-https://bananamafia.dev/post/binary-aslr-dep-32/
+https://bananamafia.dev/post/binary-aslr-dep-32/  
 https://bananamafia.dev/post/binary-canary-bruteforce/
 
 # Privilege Escalation
