@@ -167,3 +167,31 @@ Find-LocalAdminAccess -Verbose
 ```powershell
 Invoke-EnumerateLocalAdmin -Verbose
 ```
+
+- To find computers where domain administrators are logged in
+
+```powershell
+Invoke-UserHunter
+Invoke-UserHunter -Stealth
+```
+
+#### GPO is "Group Policy Objects" and are used for efficient management of systems across domains for tasks like logoff, shutdown, software installation. From an attackers' point of view, GPOs can be elevated to perform tasks like PrivEsc, backdooring etc.
+
+- Get list of GPOs in current domain
+
+```powershell
+Get-NetGPO
+Get-NetGPO -ComputerName DCORP-DC1.CORPORATE.local
+```
+
+- Get list of GPOs which uses "Restricted Groups" or groups.xml for interesting users
+
+```powershell
+Get-NetGPOGroup
+```
+
+- Get machines where specified users are member of a particular group
+
+```powershell
+Find-GPOLocation -UserName USERNAME -Verbose
+```
