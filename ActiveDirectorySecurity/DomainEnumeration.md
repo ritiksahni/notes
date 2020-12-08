@@ -218,3 +218,11 @@ Get-ObjectAcl -SamAccountName OBJECTNAME -ResolveGUIDs
 ```powershell
 Invoke-ACLScanner -ResolveGUIDs
 ```
+
+#### Trusts are relationships between multiple domains, it allows users to access resources from external domain.
+
+- To map the trusts in complete forest
+
+```powershell
+Get-NetForestTrust
+```
