@@ -116,6 +116,12 @@ Get-ADForest
 Get-ADForest -Filter *
 ```
 
+- Enumerating ACLs without resolving GUIDs using Distinguished Names
+
+```powershell
+(Get-Acl 'MACHINE:\CN=Administrator,CN=Users,DC=windomain,DC=corpdomain,DC=local').Access
+```
+
 
 # Enumeration using PowerView
 
@@ -150,12 +156,6 @@ Get-NetGroup -DomainController DC-HOSTNAME
 Get-NetSession -ComputerName HOSTNAME
 ```
 
-- To get access control list information
-
-```powershell
-Get-ObjectAcl -SamAccountName NAME
-```
-
 - To find if the current user is local administrator in any other host of the current domain
 
 ```powershell
@@ -173,6 +173,12 @@ Invoke-EnumerateLocalAdmin -Verbose
 ```powershell
 Invoke-UserHunter
 Invoke-UserHunter -Stealth
+```
+
+- Get organizational units in a domain
+
+```powershell
+Get-NetOU -FullData
 ```
 
 #### GPO is "Group Policy Objects" and are used for efficient management of systems across domains for tasks like logoff, shutdown, software installation. From an attackers' point of view, GPOs can be elevated to perform tasks like PrivEsc, backdooring etc.
@@ -196,8 +202,20 @@ Get-NetGPOGroup
 Find-GPOLocation -UserName USERNAME -Verbose
 ```
 
-- Get organizational units in a domain
+#### An access control list (ACL), with respect to a computer file system, is a list of permissions attached to an object. An ACL specifies which users or system processes are granted access to objects, as well as what operations are allowed on given objects. Each entry in a typical ACL specifies a subject and an operation. For instance, if a file has an ACL that contains (Alice, delete), this would give Alice permission to delete the file.  
+
+There are two types of ACLs: SACL - It defines what permissions the users/groups are having on an object. DACL - Logs success or failure events audit messages when an object is accessed. 
+
+- To get access control list information about specified object
 
 ```powershell
-Get-NetOU -FullData
+Get-ObjectAcl -SamAccountName OBJECTNAME -ResolveGUIDs
+```
+
+> ACEs corresponds to individual permissions or audit access. In simple words, it checks for __who__ has the permission to do __what?__  
+
+- Scan for interesting ACEs
+
+```powershell
+Invoke-ACLScanner -ResolveGUIDs
 ```
