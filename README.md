@@ -1,4 +1,4 @@
-# Preparation Notes
+# Notes & Resources
 
 Notes for preparation and studies.
 
