@@ -1,5 +1,4 @@
-# Domain Enumeration
-
+# Domain Enumeration using Powershell
 - To get current domain information
 
 ```powershell
