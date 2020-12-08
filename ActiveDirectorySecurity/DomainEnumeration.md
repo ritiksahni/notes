@@ -195,3 +195,9 @@ Get-NetGPOGroup
 ```powershell
 Find-GPOLocation -UserName USERNAME -Verbose
 ```
+
+- Get organizational units in a domain
+
+```powershell
+Get-NetOU -FullData
+```
