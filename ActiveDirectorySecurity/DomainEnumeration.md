@@ -221,6 +221,12 @@ Invoke-ACLScanner -ResolveGUIDs
 
 #### Trusts are relationships between multiple domains, it allows users to access resources from external domain.
 
+- To map the trusts in the current domain
+
+```powershell
+Get-NetDomainForest
+```
+
 - To map the trusts in complete forest
 
 ```powershell
