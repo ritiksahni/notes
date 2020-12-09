@@ -81,7 +81,8 @@ tasklist /V
 
 # Enumeration using Active Directory module
 
-> Active Directory powershell module is signed by Microsoft itself so the detection rate by AVs is very less. By default, it needs admin privileges and  RSAT tools installed in order to work in system.
+__Active Directory powershell module is signed by Microsoft itself so the detection rate by AVs is very less. By default, it needs admin privileges and  RSAT tools installed in order to work in system. AD-Modules can also work in PowerShell Constrained Language mode (https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode/)__
+
 
 Steps to use AD-Modules:
 
@@ -91,8 +92,6 @@ Steps to use AD-Modules:
 ```powershell
 Import-Module .\Microsoft.ActiveDirectory.Management.dll
 ```
-
-> AD-Modules can also work in PowerShell Constrained Language mode (https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode/)
 
 -----------------
 
@@ -203,7 +202,9 @@ Find-GPOLocation -UserName USERNAME -Verbose
 
 #### An access control list (ACL), with respect to a computer file system, is a list of permissions attached to an object. An ACL specifies which users or system processes are granted access to objects, as well as what operations are allowed on given objects. Each entry in a typical ACL specifies a subject and an operation. For instance, if a file has an ACL that contains (Alice, delete), this would give Alice permission to delete the file.  
 
-There are two types of ACLs: SACL - It defines what permissions the users/groups are having on an object. DACL - Logs success or failure events audit messages when an object is accessed. 
+There are two types of ACLs:  
+SACL - It defines what permissions the users/groups are having on an object.  
+DACL - Logs success or failure events audit messages when an object is accessed.   
 
 - To get access control list information about specified object
 
