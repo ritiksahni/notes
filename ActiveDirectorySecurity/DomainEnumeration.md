@@ -120,6 +120,14 @@ Get-ADForest -Filter *
 (Get-Acl 'MACHINE:\CN=Administrator,CN=Users,DC=windomain,DC=corpdomain,DC=local').Access
 ```
 
+- To get operating systems of all computers across the domain
+
+```powershell
+Get-ADComputer -Filter 'operatingsystem -notlike "*server*" -and enabled -eq "true"' `
+-Properties Name,Operatingsystem,OperatingSystemVersion,IPv4Address |
+Sort-Object -Property Operatingsystem |
+Select-Object -Property Name,Operatingsystem,OperatingSystemVersion,IPv4Address
+```
 
 # Enumeration using PowerView
 
