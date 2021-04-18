@@ -25,4 +25,3 @@ YouTube Video Link: https://www.youtube.com/watch?v=XGW6VXHsND8
 
 - Number of investors in India is very low, mostly concentrated in business communities.
 - Our relationship with money isn't a pleasant one.
-- We can
