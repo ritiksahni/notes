@@ -3,7 +3,7 @@
 **Title**: What to do in Your 20s to retire Before 40 - CA Rachana Ranade  
 **YouTube Video Link**: https://www.youtube.com/watch?v=4jIE674ntO
 
-- Commonly, if passive income exceeds active income, we can say that we gained financial independance because now making money would not require much physical efforts.
+- Usually, if passive income exceeds active income, we can say that we gained financial independance because now making money would not require much physical efforts.
 
 - Multiple sources of income are essential for financial independance.
 	- Commissions
